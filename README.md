@@ -27,20 +27,18 @@ Sessions write structured markdown to a vault you own. Over time, the tool build
 **Install from GitHub (recommended):**
 
 ```bash
-claude plugin add noahrasheta/examined-life
+# Step 1: Add the repo as a marketplace
+claude plugin marketplace add noahrasheta/examined-life
+
+# Step 2: Install the plugin
+claude plugin install examined-life
 ```
 
-**Or install from a local clone:**
+To install globally (available in all projects):
 
 ```bash
-git clone https://github.com/noahrasheta/examined-life.git
-claude plugin add /path/to/examined-life
-```
-
-By default this installs for the current project. To install globally (available in all projects), add the `--global` flag:
-
-```bash
-claude plugin add noahrasheta/examined-life --global
+claude plugin marketplace add noahrasheta/examined-life
+claude plugin install examined-life --global
 ```
 
 **Verify it worked:** Open Claude Code and type `/`. You should see `examine` in the list of available skills.

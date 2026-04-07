@@ -1,0 +1,27 @@
+{
+  "name": "examined-life",
+  "owner": {
+    "name": "Noah Rasheta",
+    "url": "https://secularbuddhism.com"
+  },
+  "metadata": {
+    "description": "AI-guided structured self-inquiry using the cognitive cycle",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "examined-life",
+      "description": "AI-guided structured self-inquiry using the cognitive cycle",
+      "version": "0.1.0",
+      "author": {
+        "name": "Noah Rasheta"
+      },
+      "source": ".",
+      "homepage": "https://github.com/noahrasheta/examined-life",
+      "repository": "https://github.com/noahrasheta/examined-life",
+      "license": "MIT",
+      "keywords": ["self-inquiry", "cognitive-cycle", "reflection", "socratic"],
+      "category": "productivity"
+    }
+  ]
+}
