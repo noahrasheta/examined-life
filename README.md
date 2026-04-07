@@ -22,12 +22,37 @@ Sessions write structured markdown to a vault you own. Over time, the tool build
 
 ### Claude Code
 
-1. Clone this repo
-2. Install as a plugin: `claude plugin add /path/to/examined-life`
-3. Run `/examine` to start a Pattern Finder session
-4. Run `/examine situation`, `/examine belief`, `/examine mirror`, `/examine life`, or `/examine review` for other modes
+**Prerequisite:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) must be installed.
 
-The repo is structured as a Claude Code plugin with the skill at `skills/examine/SKILL.md`. The skill auto-discovers and loads the framework files from `framework/`.
+**Install from GitHub (recommended):**
+
+```bash
+claude plugin add noahrasheta/examined-life
+```
+
+**Or install from a local clone:**
+
+```bash
+git clone https://github.com/noahrasheta/examined-life.git
+claude plugin add /path/to/examined-life
+```
+
+By default this installs for the current project. To install globally (available in all projects), add the `--global` flag:
+
+```bash
+claude plugin add noahrasheta/examined-life --global
+```
+
+**Verify it worked:** Open Claude Code and type `/`. You should see `examine` in the list of available skills.
+
+**Start a session:**
+
+- `/examine` — Pattern Finder (default)
+- `/examine situation` — explore a specific event
+- `/examine belief` — examine a core belief
+- `/examine mirror` — reflect on a message or conversation
+- `/examine life` — wide-angle life review
+- `/examine review` — synthesize patterns across past sessions
 
 ### Cursor
 
@@ -93,7 +118,7 @@ The loop is the product. The cognitive cycle is not a feature — it is the arch
 examined-life/
 ├── .claude-plugin/             # Claude Code plugin manifest
 │   └── plugin.json
-├── skills/                     # Claude Code skill (primary adapter)
+├── skills/                     # Claude Code skill
 │   └── examine/
 │       └── SKILL.md
 ├── framework/                  # The portable core — plain markdown
