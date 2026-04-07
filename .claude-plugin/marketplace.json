@@ -16,7 +16,7 @@
       "author": {
         "name": "Noah Rasheta"
       },
-      "source": ".",
+      "source": "./",
       "homepage": "https://github.com/noahrasheta/examined-life",
       "repository": "https://github.com/noahrasheta/examined-life",
       "license": "MIT",
