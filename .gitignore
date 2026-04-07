@@ -1,0 +1,9 @@
+# User vault (private data)
+vault/*
+!vault/.gitkeep
+
+# OS
+.DS_Store
+
+# Project context (private, never commit)
+context/
