@@ -117,4 +117,6 @@ MIT. See [LICENSE](LICENSE).
 
 ## Author
 
-Noah Rasheta — [Secular Buddhism Podcast](https://secularbuddhism.com)
+[Noah Rasheta](https://noahrasheta.com) — [Eightfold Path (Secular Buddhism Podcast)](https://eightfoldpath.com)
+
+To learn more about the cognitive cycle, check out [the podcast episode](https://eightfoldpath.com/sbp/episode-188) where Noah explains the framework, or explore the [Inner Peace Roadmap course](https://eightfoldpath.com/courses/inner-peace-roadmap) for the full curriculum.
