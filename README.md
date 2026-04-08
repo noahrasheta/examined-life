@@ -84,6 +84,22 @@ You can enter the cycle at any point. The tool walks you backwards to surface th
 | **Life Review** | Wider examination of values, roles, narratives, and identity tensions | Monthly or quarterly zoom-out |
 | **Review** | Cross-session synthesis — surfaces recurring patterns across all prior sessions | After 3+ sessions |
 
+## How sessions build on each other
+
+A single session is useful. Multiple sessions over time is where the real value lives.
+
+**Each `/examine` starts a fresh session.** It never overwrites previous work. Every session gets its own file in the vault, so you can explore different topics freely — one session about a work conflict, another about a relationship pattern, another about a belief you've been carrying since childhood. They all coexist.
+
+**After 3+ sessions, run `/examine review`.** This is the synthesis mode. It reads your entire vault and surfaces things you can't see from inside any single session:
+- Beliefs that keep appearing across different situations
+- Behavioral loops that repeat in different contexts
+- Blind spots — topics or emotions you consistently avoid
+- Growth markers — beliefs that are weakening, experiments that worked
+
+The review also builds your **Know Thyself Profile** — a living document that evolves as you accumulate sessions. Think of individual sessions as data points; the review is where the map emerges.
+
+**If you leave mid-session,** your progress is saved automatically at each phase. Run `/examine resume` to pick up where you left off. If you have multiple unfinished sessions, it will ask which one to continue.
+
 ## Where your data lives
 
 Everything you share stays on your machine. Session outputs are written to the `vault/` directory as plain markdown files with YAML frontmatter. The vault is gitignored by default. No telemetry, no analytics, no data sent anywhere. You own your data completely.
