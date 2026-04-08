@@ -47,6 +47,8 @@ All session files use YAML frontmatter. Required fields:
 ---
 date: 2026-04-07
 mode: pattern-finder
+status: complete
+phase: 5
 entry-point: behaviors
 core-belief: "I have to keep the peace"
 tags:
@@ -59,14 +61,42 @@ tags:
 **Fields:**
 - `date` — Session date (ISO 8601)
 - `mode` — Which mode was used
-- `entry-point` — Where on the cognitive cycle the user entered (beliefs, perceptions, thoughts, emotions, feelings, decisions, actions, behaviors, consequences, experiences)
-- `core-belief` — The primary belief surfaced during the session (quoted string). May be empty if no belief was clearly identified.
+- `status` — Session status: `in-progress` or `complete`
+- `phase` — Current phase number (1-5). Tracks how far the session progressed.
+- `entry-point` — Where on the cognitive cycle the user entered (beliefs, perceptions, thoughts, emotions, feelings, decisions, actions, behaviors, consequences, experiences). May be empty if Phase 1 is still in progress.
+- `core-belief` — The primary belief surfaced during the session (quoted string). May be empty if no belief was clearly identified yet.
 - `tags` — Free-form tags for the user's own organization. The tool suggests tags; the user approves them.
 
 Optional fields:
 - `linked-sessions` — Wikilinks to related sessions
 - `experiment` — Wikilink to a related experiment file
-- `status` — For experiments: `active`, `completed`, `abandoned`
+
+---
+
+## Progressive Saves
+
+Sessions are saved incrementally so work is never lost. The file is created after Phase 1 and updated at each subsequent phase:
+
+| After Phase | What's written | status |
+|---|---|---|
+| Phase 1 | Pattern description, entry point | `in-progress` |
+| Phase 2 | Adds backward walk and core belief | `in-progress` |
+| Phase 3 | Adds forward walk and full loop summary | `in-progress` |
+| Phase 4-5 | Adds observations, experiment | `complete` |
+
+The same file is updated in place — one file per session, not one per phase. If the user leaves mid-session, they have everything explored so far.
+
+---
+
+## Resuming Sessions
+
+When the user invokes `/examine resume`, the tool:
+1. Scans `vault/sessions/` for files with `status: in-progress`
+2. Reads the most recent one
+3. Displays a brief summary of where they left off
+4. Continues from the next phase
+
+The resume relies on the `phase` field in frontmatter and the content already written to the file.
 
 ---
 
