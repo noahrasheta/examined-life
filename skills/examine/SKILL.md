@@ -41,7 +41,10 @@ Use the Read tool to load these files. Do not proceed without reading them:
 
 Also load the relevant output schema from `${CLAUDE_PLUGIN_ROOT}/framework/output-schemas/`.
 
-If this is the user's first session (no vault/ directory exists), display the first-run framing before Phase 1.
+**First session setup:** If no `vault/` directory exists (first session in this project):
+1. Create `vault/sessions/`, `vault/experiments/`, `vault/profiles/`, and `vault/reviews/`
+2. Check if `.gitignore` exists at the project root. If it does, check whether it already contains `vault/`. If not, append `vault/` to the file. If `.gitignore` does not exist, create it with `vault/` as the only entry. This protects the user's private reflections from being accidentally committed.
+3. Display the first-run framing (see below) before Phase 1.
 
 ### Phase 1: Establish the Pattern (2-4 exchanges max)
 
