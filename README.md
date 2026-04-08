@@ -41,7 +41,7 @@ claude plugin marketplace add noahrasheta/examined-life
 claude plugin install examined-life --global
 ```
 
-**Verify it worked:** Open Claude Code and type `/`. You should see `examine` in the list of available skills.
+**Verify it worked:** Open Claude Code and type `/`. You should see `examined-life:examine` in the list of available skills. (Claude Code namespaces plugin skills as `plugin-name:skill-name`.)
 
 **Start a session:**
 
@@ -51,6 +51,9 @@ claude plugin install examined-life --global
 - `/examine mirror` — reflect on a message or conversation
 - `/examine life` — wide-angle life review
 - `/examine review` — synthesize patterns across past sessions
+- `/examine resume` — pick up an unfinished session where you left off
+
+**Pausing and resuming:** Sessions save progressively — after each phase of the cognitive cycle, your progress is written to the vault. You can close the terminal at any time without losing work. When you're ready to continue, run `/examine resume` and the tool will pick up where you left off.
 
 ### Cursor
 
@@ -84,6 +87,8 @@ You can enter the cycle at any point. The tool walks you backwards to surface th
 ## Where your data lives
 
 Everything you share stays on your machine. Session outputs are written to the `vault/` directory as plain markdown files with YAML frontmatter. The vault is gitignored by default. No telemetry, no analytics, no data sent anywhere. You own your data completely.
+
+Sessions save progressively as you work through the cognitive cycle. Each phase checkpoint updates your session file, so you never lose progress — even if you close the terminal mid-session. Session files include a `status` field (`in-progress` or `complete`) and a `phase` number so the tool knows exactly where you left off.
 
 The vault uses Obsidian-friendly conventions (wikilinks, frontmatter) but has no Obsidian dependency. Any markdown editor works.
 
